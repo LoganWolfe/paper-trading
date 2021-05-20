@@ -1,21 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Home</title>
-    </head>
-    <body>
-        <h1>Home Page</h1>
+<%- include('header'); -%>
 
-	<main>
-            <% stock.forEach(data => { %>
-                <ul>
-                    <li><h1><a href="/<%= data.id %>"><%= data.ticker %></a></h1></li>
-                </ul>
-            <% }) %>
-        </main>
+<main>
+	<div class="container">
+		<% stock.forEach(data => { %>
+		<ul class="stock">
+			<li>
+				<h1><%= data.ticker %></h1>
+			</li>
 
-    </body>
-</html>
+			<li>
+				<p> <%= data.quantity %> </p>
+			</li>
 
+			<li>
+				<a href="/<%= data.id %>">View Position &#x21DB;</a>
+			</li>
+		</ul>
+		<% }) %>
+	</div>
+</main>
+<%- include('footer'); -%>

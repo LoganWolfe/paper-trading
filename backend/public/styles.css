@@ -13,28 +13,23 @@ html {
 body {
     font-size: 1.6rem;
     font-family: 'Darker Grotesque', sans-serif;
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#613aa1+0,3f226b+50,381d5f+59,351c5c+100 */
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#613aa1+1,3f226b+50,381d5f+59,351c5c+100 */
-    background: #613aa1;
-    /* Old browsers */
-    background: -moz-linear-gradient(left, #613aa1 1%, #3f226b 50%, #381d5f 59%, #351c5c 100%);
-    /* FF3.6-15 */
-    background: -webkit-linear-gradient(left, #613aa1 1%, #3f226b 50%, #381d5f 59%, #351c5c 100%);
-    /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right, #613aa1 1%, #3f226b 50%, #381d5f 59%, #351c5c 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#613aa1', endColorstr='#351c5c', GradientType=1);
-    /* IE6-9 */
-
+    
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1e5799+20,2989d8+50,1e5799+80 */
+background: rgb(30,87,153); /* Old browsers */
+background: -moz-linear-gradient(left,  rgba(30,87,153,1) 20%, rgba(41,137,216,1) 50%, rgba(30,87,153,1) 80%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  rgba(30,87,153,1) 20%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 80%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  rgba(30,87,153,1) 20%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 80%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#1e5799',GradientType=1 ); /* IE6-9 */
 
 }
 
 header {
-	display: grid;
-	justify-content: center;
-	padding: 0 2rem 0 2rem;
-	margin-botton: 5rem;
-	text-align: center;
+    display: grid;
+    justify-content: center;
+    padding: 0 2rem 0 2rem;
+    margin-bottom: 5rem;
+    text-align: center;
+    font-weight: bold;
 }
 
 header h1 {
@@ -48,14 +43,15 @@ header a {
     align-items: center;
     color: #ffffff;
     text-decoration: none;
-    background: #048bfa;
+    background: #d17804;
+    margin-bottom: 5px;
     height: 4rem;
     text-transform: uppercase;
     transition: background 1s;
 }
 
 header a:hover {
-    background: #048bfa;
+    background: #e0ba5a;
 }
 
 .container {
@@ -86,7 +82,7 @@ main {
 }
 
 .stock:hover {
-    background: #7760A0;
+    background: #d17804;
     opacity: 0.8;
 }
 
@@ -118,7 +114,7 @@ p {
 
 .stock a {
     display: block;
-    border: 0.1rem solid #9C3E6E;
+    border: 0.1rem solid #e0ba5a;
     color: #ffffff;
     text-decoration: none;
     padding: 1rem;
@@ -126,11 +122,12 @@ p {
     max-width: 14rem;
     width: 100%;
     transition: background 1s, border 1s;
+    font-weight: bold;
 }
 
 .stock a:hover {
-    background: #ce5292;
-    border: 0.1rem solid #c54989;
+    background: #e0ba5a;
+    border: 0.1rem solid #e0ba5a;
 }
 
 .container-form {
@@ -222,6 +219,9 @@ textarea {
     background: #1d0d36;
 }
 
+.stock-description {
+    white-space: pre-wrap;
+}
 
 @media screen and (max-width: 900px) {
     /* body {
@@ -232,7 +232,7 @@ textarea {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .anime-content {
+    .stock-content {
         grid-template-columns: repeat(1, 1fr);
 
     }

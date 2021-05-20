@@ -5,7 +5,10 @@ exports.getIndex = async (req, res) => {
 
     try {
         console.log(stock);
-        res.status(200).render('index', { stock: stock });
+
+	res.status(200).render('index', { stock: stock });
+
+        //res.json(stock);
     } catch (error) {
         console.log(error);
     }
@@ -26,7 +29,7 @@ exports.getStock = async (req, res) => {
 };
 
 exports.getAddStock = (req, res) => {
-    res.status(200).render('edit-stock');
+    res.status(200).render('edit-stock', {editing: false});
 };
 
 exports.postStock = (req, res) => {
@@ -36,6 +39,47 @@ exports.postStock = (req, res) => {
     stock.save();
     console.log('Stock added to the database');
     res.status(201).redirect('/');
+};
+
+exports.getEditStock = async (req, res) => {
+    const stockId = req.params.stockId;
+
+    const editMode = req.query.edit;
+
+    if (!editMode) {
+        return res.redirect('/');
+    }
+
+    const stock = await Stock.findById(stockId);
+
+    try {
+        if (!stockId) {
+            return res.redirect('/');
+        }
+        console.log(stock);
+        res.status(200).render('edit-stock', { stock: stock, editing: editMode });
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+exports.postEditStock = (req, res) => {
+    const stockId = req.body.stockId;
+    const { ticker, quantity } = req.body;
+
+    Anime.findById(stockId)
+        .then((stpock) => {
+	    stock.ticker = ticker;
+	    stock.quantity = quantity;
+            return stock.save();
+        })
+        .then(() => {
+            console.log('Item Updated');
+            res.status(201).redirect('/${stockId}');
+        })
+        .catch((err) => {
+            console.log(err);
+        });
 };
 
 exports.postDelete = async (req, res) => {

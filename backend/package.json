@@ -2,11 +2,11 @@
   "name": "paper-trading",
   "version": "1.0.0",
   "description": "",
-  "main": "./backend/app.js",
+  "main": "./app.js",
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "servers": "concurrently \"npm run dev\" \"cd ./frontend && npm run start\""
+    "servers": "concurrently \"npm run dev\" \"cd ../frontend && npm run start\""
   },
   "repository": {
     "type": "git",
