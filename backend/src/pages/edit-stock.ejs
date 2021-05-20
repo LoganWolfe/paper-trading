@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Add Stock</title>
+    </head>
+    <body>
+        <h1>Add Stock</h1>
+
+        <form method="POST" action="/add-stock">
+            <div>
+                <label>Ticker Symbol</label>
+                <input type="text" name="ticker" required />
+            </div>
+
+	    <div>
+		    <label> Quantity </label>
+		    <input type="number" name="quantity" min="1" required />
+	    </div>
+
+	    <div>
+                <button type="submit">Buy Stock</button>
+            </div>
+        </form>
+    </body>
+</html>
+

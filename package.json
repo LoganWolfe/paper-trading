@@ -1,0 +1,32 @@
+{
+  "name": "paper-trading",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./backend/app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "servers": "concurrently \"npm run dev\" \"cd ./frontend && npm run start\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LoganWolfe/paper-trading.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LoganWolfe/paper-trading/issues"
+  },
+  "homepage": "https://github.com/LoganWolfe/paper-trading#readme",
+  "dependencies": {
+    "concurrently": "^6.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^9.0.2",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.7",
+    "mongoose": "^5.9.24",
+    "nodemon": "^2.0.7"
+  }
+}
