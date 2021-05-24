@@ -1,26 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Stock</title>
-    </head>
-    <body>
-        <h1>Stock</h1>
+<%- include('header'); -%>
+<main>
+    <div class="container-stock">
+        <div><h1>Stock</h1></div>
+        <div class="stock-content">
+            <div>
+                <h2><%= stock.ticker %></h2>
 
-        <main>
-            <h1><%= stock.ticker %></h1>
-	    <div><%= stock.quantity %></div>
-        </main>
-
-	<div>
+                <p class="stock-quantity"><%= stock.quantity %></p>
+            </div>
+        </div>
+        <div class="stock-edit-delete">
+            <div>
                 <form method="POST" action="/delete">
                     <div>
                         <input type="hidden" value="<%= stock.id %>" name="stockId" />
-                        <button>Sell</button>
+                        <button>Sell All</button>
                     </div>
                 </form>
+            </div>
+            <div>
+                <a href="/edit-stock/<%= stock.id %>?edit=true">Manage</a>
+            </div>
         </div>
-    </body>
-</html>
-
+    </div>
+</main>
+<%- include('footer'); -%>

@@ -5,11 +5,27 @@
 		<% stock.forEach(data => { %>
 		<ul class="stock">
 			<li>
-				<h1><%= data.ticker %></h1>
+				<h1> <%= data.ticker %> </h1>
 			</li>
 
 			<li>
-				<p> <%= data.quantity %> </p>
+				<p>Quantity: <%= data.quantity %></p>
+			</li>
+
+			<li>
+				<p>Avg. Fill Price: </p>
+			</li>
+
+			<li>
+				<p>Current Price: </p>
+			</li>
+
+			<li>
+				<p>P/L ($USD)</p>
+			</li>
+
+			<li>
+				<p>% P/L</p>
 			</li>
 
 			<li>

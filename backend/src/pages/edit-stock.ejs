@@ -1,28 +1,28 @@
 <%- include('header'); -%>
 <div class="container-form">
-	<h1><% if(editing){ %>Manage Position<% } else { %>Add Stock<% } %></h1>
+	<h1><% if(editing){ %>Edit Stock<% } else { %>Add Stock<% } %></h1>
 
 	<form method="POST" action="/<% if(editing){ %>edit-stock<% } else { %>add-stock<% } %>">
 		<div>
-			<label>Ticker</label>
+			<label>Ticker Symbol</label>
 			<input type="text" name="ticker" value="<% if(editing){ %><%= stock.ticker %><% } %>" required />
 		</div>
-		
-		<div>
-			<label> Quantity </label>
-			<input type="number" name="quantity" value="<% if (editing) { %><%= stock.quantity %><% } %>" required />
-		</div>
 
-		<% if(editing){ %>
 		<div>
-			<input type="hidden" name="stockId" value="<%= stock.id %>" />
+			<label>Quantity</label>
+			<input type="number" name="quantity" min="0" value="<% if(editing){ %><%= stock.quantity %><% } else { 0 }%>" required />
 		</div>
+		<% if(editing){ %>
+			<div>
+				<input type="hidden" name="stockId" value="<%= stock.id %>" />
+			</div>
 		<% } %>
 		<div>
-			<button type="submit"><% if(editing){ %>Manage Position<% } else { %>Buy Stock<% } %></button>
+			<button type="submit"><% if(editing){ %>Edit Stock<% } else { %>Add Stock<% } %></button>
 		</div>
 	</form>
 </div>
+
 		<%- include('footer'); -%>
 	</body>
 </html>

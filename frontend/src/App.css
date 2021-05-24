@@ -13,28 +13,22 @@ html {
 body {
     font-size: 1.6rem;
     font-family: 'Darker Grotesque', sans-serif;
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#613aa1+0,3f226b+50,381d5f+59,351c5c+100 */
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#613aa1+1,3f226b+50,381d5f+59,351c5c+100 */
-    background: #613aa1;
-    /* Old browsers */
-    background: -moz-linear-gradient(left, #613aa1 1%, #3f226b 50%, #381d5f 59%, #351c5c 100%);
-    /* FF3.6-15 */
-    background: -webkit-linear-gradient(left, #613aa1 1%, #3f226b 50%, #381d5f 59%, #351c5c 100%);
-    /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right, #613aa1 1%, #3f226b 50%, #381d5f 59%, #351c5c 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#613aa1', endColorstr='#351c5c', GradientType=1);
-    /* IE6-9 */
 
-
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#9e5a64+0,9e5a63+100 */
+    background: rgb(158,90,100); /* Old browsers */
+    background: -moz-linear-gradient(left,  rgba(158,90,100,1) 0%, rgba(158,90,99,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  rgba(158,90,100,1) 0%,rgba(158,90,99,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  rgba(158,90,100,1) 0%,rgba(158,90,99,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9e5a64', endColorstr='#9e5a63',GradientType=1 ); /* IE6-9 */
 }
 
 header {
-	display: grid;
-	justify-content: center;
-	padding: 0 2rem 0 2rem;
-	margin-botton: 5rem;
-	text-align: center;
+    display: grid;
+    justify-content: center;
+    padding: 0 2rem 0 2rem;
+    margin-bottom: 5rem;
+    text-align: center;
+    font-weight: bold;
 }
 
 header h1 {
@@ -48,14 +42,15 @@ header a {
     align-items: center;
     color: #ffffff;
     text-decoration: none;
-    background: #048bfa;
+    background: #314455;
+    margin-bottom: 5px;
     height: 4rem;
     text-transform: uppercase;
     transition: background 1s;
 }
 
 header a:hover {
-    background: #048bfa;
+    background: #090d10;
 }
 
 .container {
@@ -65,10 +60,10 @@ header a:hover {
     width: 100%;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     border-radius: 0.7rem;
-    background: #211039;
-    -webkit-box-shadow: 0px 0px 26px -2px rgba(36, 4, 92, 1);
-    -moz-box-shadow: 0px 0px 26px -2px rgba(36, 4, 92, 1);
-    box-shadow: 0px 0px 26px -2px rgba(36, 4, 92, 1);
+    background: #314455;
+    -webkit-box-shadow: 0px 0px 26px -2px rgb(82, 48, 48);
+    -moz-box-shadow: 0px 0px 26px -2px rgb(82, 48, 48);
+    box-shadow: 0px 0px 26px -2px rgb(82, 48, 48);
 }
 
 main {
@@ -76,8 +71,8 @@ main {
 }
 
 .stock {
-    border-left: 0.5px solid #7760A0;
-    border-right: 0.5px solid #7760A0;
+    border-left: 0.5px solid #9e5a63;
+    border-right: 0.5px solid #9e5a63;
     list-style: none;
     transition: background 1s, opacity 1s;
     cursor: pointer;
@@ -86,7 +81,7 @@ main {
 }
 
 .stock:hover {
-    background: #7760A0;
+    background: #1c2731;
     opacity: 0.8;
 }
 
@@ -118,7 +113,7 @@ p {
 
 .stock a {
     display: block;
-    border: 0.1rem solid #9C3E6E;
+    border: 0.1rem solid #824a52;
     color: #ffffff;
     text-decoration: none;
     padding: 1rem;
@@ -126,11 +121,12 @@ p {
     max-width: 14rem;
     width: 100%;
     transition: background 1s, border 1s;
+    font-weight: bold;
 }
 
 .stock a:hover {
-    background: #ce5292;
-    border: 0.1rem solid #c54989;
+    background: #824a52;
+    border: 0.1rem solid #824a52;
 }
 
 .container-form {
@@ -154,7 +150,7 @@ textarea {
 
 .container-form form button {
     display: block;
-    background: #ce5292;
+    background: #314455;
     border: none;
     color: #ffffff;
     padding: 1rem;
@@ -164,7 +160,7 @@ textarea {
 }
 
 .container-form form button:hover {
-    background: #f880be;
+    background: #090d10;
 }
 
 .container-stock {
@@ -204,7 +200,7 @@ textarea {
 .stock-edit-delete button,
 .stock-edit-delete a {
     display: block;
-    background: #371D5E;
+    background: #314455;
     border: none;
     color: #ffffff;
     padding: 8px;
@@ -219,9 +215,12 @@ textarea {
 
 .stock-edit-delete button:hover,
 .stock-edit-delete a:hover {
-    background: #1d0d36;
+    background: #090d10;
 }
 
+.stock-quantity {
+    white-space: pre-wrap;
+}
 
 @media screen and (max-width: 900px) {
     /* body {
@@ -232,7 +231,7 @@ textarea {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .anime-content {
+    .stock-content {
         grid-template-columns: repeat(1, 1fr);
 
     }
