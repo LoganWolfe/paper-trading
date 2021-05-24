@@ -35,10 +35,38 @@ exports.getAddStock = (req, res) => {
 exports.postStock = (req, res) => {
     const { ticker, quantity } = req.body;
 
-    const stock = new Stock({ ticker: ticker, quantity: quantity });
-    stock.save();
-    console.log('Stock added to the database');
-    res.status(201).redirect('/');
+    var unirest = require("unirest");
+
+    var req = unirest("GET", "https://alpha-vantage.p.rapidapi.com/query");
+
+    req.query({
+        "function": "GLOBAL_QUOTE",
+        "symbol": ticker
+    });
+
+    req.headers({
+        "x-rapidapi-key": process.env.API_KEY,
+        "x-rapidapi-host": "alpha-vantage.p.rapidapi.com",
+        "useQueryString": true
+    });
+
+
+    let currPrice = 0;
+    req.end(function (response) {
+        if (response.error) throw new Error(response.error);
+
+        const data = response.body["Global Quote"];
+        currPrice = parseFloat(data["05. price"]);
+
+        console.log(response.body);
+        console.log(currPrice);
+
+        const stock = new Stock({ ticker: ticker, quantity: quantity, price: currPrice });
+        stock.save();
+        console.log('Stock added to the database');
+        res.status(201).redirect('/');
+    });
+
 };
 
 exports.getEditStock = async (req, res) => {
@@ -66,16 +94,39 @@ exports.getEditStock = async (req, res) => {
 exports.postEditStock = (req, res) => {
     const stockId = req.body.stockId;
     const { ticker, quantity } = req.body;
+    Stock.findById(stockId)
+        .then((stock) => {
+            var unirest = require("unirest");
+            var req = unirest("GET", "https://alpha-vantage.p.rapidapi.com/query");
+            req.query({
+                "function": "GLOBAL_QUOTE",
+                "symbol": ticker
+            });
+            req.headers({
+                "x-rapidapi-key": process.env.API_KEY,
+                "x-rapidapi-host": "alpha-vantage.p.rapidapi.com",
+                "useQueryString": true
+            });
 
-    Anime.findById(stockId)
-        .then((stpock) => {
-	    stock.ticker = ticker;
-	    stock.quantity = quantity;
-            return stock.save();
+            let currPrice = 0;
+            req.end(function (response) {
+                if (response.error) throw new Error(response.error);
+
+                const data = response.body["Global Quote"];
+                currPrice = parseFloat(data["05. price"]);
+
+                console.log(response.body);
+                console.log(currPrice);
+
+                const stock = new Stock({ ticker: ticker, quantity: quantity, price: currPrice });
+                console.log('Stock added to the database');
+                return stock.save();
+            });
+            return;
         })
         .then(() => {
             console.log('Item Updated');
-            res.status(201).redirect('/${stockId}');
+            res.status(201).redirect('/');
         })
         .catch((err) => {
             console.log(err);

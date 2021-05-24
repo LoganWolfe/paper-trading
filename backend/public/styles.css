@@ -99,8 +99,9 @@ main {
     opacity: 0.8;
 }
 
-ul li:nth-child(7) {
+ul li:nth-child(5) {
     display: grid;
+    padding-top: 2rem;
     justify-content: center;
 }
 

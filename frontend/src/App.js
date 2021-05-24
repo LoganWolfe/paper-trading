@@ -56,7 +56,7 @@ const App = () => {
                                     </li>
 
                                     <li>
-                                        <p>P/L ($USD)</p>
+                                        <p>P/L</p>
                                     </li>
 
                                     <li>
