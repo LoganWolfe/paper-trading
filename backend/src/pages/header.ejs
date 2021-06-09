@@ -5,12 +5,26 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Paper Trading</title>
 		<link rel="stylesheet" href="http://localhost:8080/static/styles.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	</head>
 	<body>
-		<header>
-			<h1> Paper Trading </h1>
-			<a href="/">View All Positions</a>
+		<header class="topnav" id="navbar">
+			<a href="/" class="active"> Home </a>
 			<a href="/add-stock">Buy new stock &#x27A2;</a>
+			<a href="javascript:void(0);" class="icon" onclick="navFunction()">
+				<i class="fa fa-bars"></i>
+			</a>
 		</header>
+
+		<script>
+			function navFunction() {
+				let x = document.getElementById("navbar");
+				if (x.className === "topnav") {
+					x.className += " responsive";
+				} else {
+					x.className = "topnav";
+				}
+			}
+		</script>
 	</body>
 </html>

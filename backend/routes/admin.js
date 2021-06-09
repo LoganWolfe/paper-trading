@@ -12,7 +12,7 @@ router.get('/edit-stock/:stockId', adminController.getEditStock);
 
 router.post('/edit-stock', adminController.postEditStock);
 
-router.get('/:stockId', adminController.getStock);
+router.post('/:stockId', adminController.getStock);
 
 router.post('/delete', adminController.postDelete);
 
