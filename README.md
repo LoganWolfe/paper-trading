@@ -1,5 +1,4 @@
 # Paper Trading Application
-![Paper Trading Web App](https://user-images.githubusercontent.com/60913657/119407103-c1b48a80-bcb1-11eb-921c-83b21f46d39b.png)
 Languages/Technologies Used: MERN (MongoDB, Express.js, React.js, Node.js), JavaScript, HTML, CSS. DB hosted with Microsoft Azure.
 
 ## Installation
